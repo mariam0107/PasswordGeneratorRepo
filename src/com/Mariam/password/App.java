@@ -1,2 +1,16 @@
-package com.Mariam.password;public class App {
+package com.Mariam.password;
+
+public class App {
+    public static void main(String[] args) {
+        UserInterface ui = new TextBasedInterface();
+        int length = ui.getPasswordLength();
+        boolean useLowercase = ui.userLowercase();
+        boolean useUppercase = ui.useUppercase();
+        boolean useNumbers = ui.useNumbers();
+        boolean useSymbols = ui.useSymbols();
+
+        PasswordGenerator gen = new PasswordGenerator();
+        String password = gen.generatePassword(length,useLowercase,useUppercase,useNumbers,useSymbols);
+        ui.displayPassword(password);
+    }
 }
