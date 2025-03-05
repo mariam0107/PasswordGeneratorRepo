@@ -11,14 +11,6 @@ public class PasswordGenerator {
         String symbols = "!%&/()=?+";
 
         StringBuilder charOptions = new StringBuilder();
-        String allChars = charOptions.toString();
-        StringBuilder password = new StringBuilder();
-        Random rand = new Random();
-
-        for (int i = 0;i < length ; i++){
-           char nextLetter = allChars.charAt(rand.nextInt(allChars.length()));
-           password.append(nextLetter);
-        }
 
         if(useLowercase)
         {
@@ -36,6 +28,10 @@ public class PasswordGenerator {
         {
             charOptions.append(symbols);
         }
+
+        String allChars = charOptions.toString();
+        StringBuilder password = new StringBuilder();
+        Random rand = new Random();
 
         for(int i =0;i <length ; i++){
             char nextLetter = allChars.charAt(rand.nextInt(allChars.length()));
